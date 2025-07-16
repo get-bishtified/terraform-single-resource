@@ -1,23 +1,14 @@
-variable "region" {
-  default = "ap-south-1"
-}
-
-variable "ami_id" {
-  description = "AMI ID for the EC2 instance"
+variable "aws_region" {
+  description = "AWS region to deploy into"
+  type        = string
 }
 
 variable "instance_type" {
-  default = "t2.micro"
+  description = "Type of EC2 instance"
+  type        = string
 }
 
-variable "key_name" {
-  description = "Key pair name to SSH into EC2"
-}
-
-variable "subnet_id" {
-  description = "Subnet ID where EC2 instance will be launched"
-}
-
-variable "vpc_id" {
-  description = "VPC ID for the security group"
+variable "ami_id" {
+  description = "AMI ID for EC2 instance"
+  type        = string
 }

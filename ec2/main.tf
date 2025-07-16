@@ -1,23 +1,6 @@
-provider "aws" {
-  region = var.region
-}
-
-resource "aws_instance" "tf-demo-ec2" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  subnet_id     = var.subnet_id
-  key_name      = var.key_name
-  vpc_security_group_ids = [aws_security_group.tf-demo-sg.id]
-
-  tags = {
-    Name = "tf-demo-ec2"
-  }
-}
-
-resource "aws_security_group" "tf-demo-sg" {
-  name        = "tf-demo-sg"
-  description = "Allow SSH and HTTP"
-  vpc_id      = var.vpc_id
+resource "aws_security_group" "web_sg" {
+  name        = "web-sg"
+  description = "Allow HTTP and SSH"
 
   ingress {
     from_port   = 22
@@ -39,8 +22,15 @@ resource "aws_security_group" "tf-demo-sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+resource "aws_instance" "web" {
+  ami                    = var.ami_id
+  instance_type          = var.instance_type
+  user_data              = file("user-data.sh")
+  vpc_security_group_ids = [aws_security_group.web_sg.id]
 
   tags = {
-    Name = "tf-demo-sg"
+    Name = "Terraform-EC2-Web"
   }
 }
