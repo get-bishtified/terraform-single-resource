@@ -1,5 +1,5 @@
-resource "aws_security_group" "web_sg" {
-  name        = "web-sg"
+resource "aws_security_group" "demo_sg" {
+  name        = "demo_sg"
   description = "Allow HTTP and SSH"
 
   ingress {
@@ -28,9 +28,9 @@ resource "aws_instance" "web" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   user_data              = file("user-data.sh")
-  vpc_security_group_ids = [aws_security_group.web_sg.id]
+  vpc_security_group_ids = [aws_security_group.demo_sg.id]
 
   tags = {
-    Name = "Terraform-EC2-Web"
+    Name = "tf-demo-ec2"
   }
 }

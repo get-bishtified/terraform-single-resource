@@ -1,3 +1,3 @@
-aws_region     = "us-east-1"
+aws_region     = "ap-south-1"
 instance_type  = "t2.micro"
-ami_id         = "ami-0c94855ba95c71c99" # Amazon Linux 2 for us-east-1
+ami_id         = "ami-0a1235697f4afa8a4" # Amazon Linux 2
