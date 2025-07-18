@@ -1,0 +1,13 @@
+db_engine                = "postgres"
+db_engine_version        = "16.8"
+db_instance_identifier   = "demo-postgres-instance"
+db_instance_class        = "db.t3.micro"
+db_name                  = "appdb"
+db_username              = "masteruser"
+db_secret_name           = "rds-demo-db-secret"
+db_allocated_storage     = 20
+multi_az                 = false
+backup_retention_period  = 7
+publicly_accessible      = false
+vpc_security_group_ids   = ["sg-057dfc08aec36585a"]
+db_subnet_ids            = ["subnet-0abbd9d7af9b59806", "subnet-01ddfa960971c29f7"]

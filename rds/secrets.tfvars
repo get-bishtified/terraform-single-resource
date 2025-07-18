@@ -1,1 +1,0 @@
-db_password = "rdsdemoforshankaz2025!"
