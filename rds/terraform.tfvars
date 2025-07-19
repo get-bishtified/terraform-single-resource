@@ -1,10 +1,9 @@
+db_secret_name           = "demo-rds-db-secret"
 db_engine                = "postgres"
 db_engine_version        = "16.8"
 db_instance_identifier   = "demo-postgres-instance"
 db_instance_class        = "db.t3.micro"
 db_name                  = "appdb"
-db_username              = "masteruser"
-db_secret_name           = "rds-demo-db-secret"
 db_allocated_storage     = 20
 multi_az                 = false
 backup_retention_period  = 7

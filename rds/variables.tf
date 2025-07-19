@@ -1,75 +1,55 @@
 variable "db_engine" {
-  description = "Database engine (e.g., postgres or mysql)"
-  type        = string
   default     = "postgres"
+  description = "Database engine type"
 }
 
 variable "db_engine_version" {
-  description = "Version of the database engine"
-  type        = string
-  default     = "16.1"
+  default     = "16.8"
+  description = "Engine version"
 }
 
 variable "db_instance_identifier" {
-  description = "Unique name for the DB instance"
-  type        = string
   default     = "demo-postgres-instance"
+  description = "RDS instance name"
 }
 
 variable "db_instance_class" {
-  description = "Instance type for RDS"
-  type        = string
   default     = "db.t3.micro"
+  description = "Instance class"
 }
 
 variable "db_name" {
-  description = "Initial database name"
-  type        = string
   default     = "appdb"
-}
-
-variable "db_username" {
-  description = "Master username for the database"
-  type        = string
-  default     = "masteruser"
+  description = "Initial DB name"
 }
 
 variable "db_secret_name" {
-  description = "Secrets Manager name that holds DB credentials"
-  type        = string
-  default     = "rds-demo-db-secret"
+  description = "Name of Secrets Manager secret holding DB credentials"
 }
 
 variable "db_allocated_storage" {
-  description = "Allocated storage in GB"
-  type        = number
   default     = 20
+  description = "Storage in GB"
 }
 
 variable "vpc_security_group_ids" {
-  description = "List of security group IDs to associate"
   type        = list(string)
+  description = "Security groups for RDS"
 }
 
 variable "db_subnet_ids" {
-  description = "List of subnet IDs for subnet group"
   type        = list(string)
+  description = "Subnets for subnet group"
 }
 
 variable "multi_az" {
-  description = "Enable Multi-AZ deployment"
-  type        = bool
   default     = false
 }
 
 variable "backup_retention_period" {
-  description = "Backup retention in days"
-  type        = number
   default     = 7
 }
 
 variable "publicly_accessible" {
-  description = "Allow public access to the DB"
-  type        = bool
   default     = false
 }

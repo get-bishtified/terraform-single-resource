@@ -1,9 +1,14 @@
-data "aws_secretsmanager_secret_version" "db_password" {
-  secret_id = aws_secretsmanager_secret.db_password.id
+# Read existing secret
+data "aws_secretsmanager_secret" "db_secret" {
+  name = var.db_secret_name
+}
+
+data "aws_secretsmanager_secret_version" "db_secret_version" {
+  secret_id = data.aws_secretsmanager_secret.db_secret.id
 }
 
 locals {
-  db_credentials = jsondecode(data.aws_secretsmanager_secret_version.db_password.secret_string)
+  db_credentials = jsondecode(data.aws_secretsmanager_secret_version.db_secret_version.secret_string)
 }
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
@@ -15,20 +20,23 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
   }
 }
 
-resource "aws_db_parameter_group" "rds_param_group" {
-  name   = "${var.db_engine}-param-group"
-
-  family = (
-    var.db_engine == "postgres" ? "postgres16" :
-    var.db_engine == "mysql"    ? "mysql8.0" :
+locals {
+  db_parameter_family = (
+    var.db_engine == "postgres" && startswith(var.db_engine_version, "16") ? "postgres16" :
+    var.db_engine == "postgres" && startswith(var.db_engine_version, "15") ? "postgres15" :
+    var.db_engine == "mysql"    && startswith(var.db_engine_version, "8.0") ? "mysql8.0" :
     ""
   )
+}
+
+resource "aws_db_parameter_group" "rds_param_group" {
+  name   = "${var.db_engine}-param-group"
+  family = local.db_parameter_family
 
   tags = {
     Name = "${var.db_engine}-param-group"
   }
 }
-
 
 resource "aws_db_instance" "rds" {
   identifier               = var.db_instance_identifier
