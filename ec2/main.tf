@@ -24,7 +24,7 @@ resource "aws_security_group" "demo_sg" {
   }
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "demo_ec2" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   user_data              = file("user-data.sh")
