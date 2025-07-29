@@ -46,9 +46,13 @@ Subscribe for real-world AWS + DevOps content with hands-on examples.
 🛠️ Premium repository includes:
 
 3-tier-infra-app,
+
 ECS with ALB,
+
 RDS with Secrets,
+
 S3 and DynamoDB Locking
+
 and more..
 
 📩 Request access (paid):
