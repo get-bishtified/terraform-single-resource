@@ -32,7 +32,7 @@ module "s3" {
   source      = "./modules/s3"
   bucket_name = "my-terraform-bucket"
 }
-
+```
 Initialize and apply:
 terraform init
 terraform apply
