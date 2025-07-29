@@ -34,8 +34,8 @@ module "s3" {
 }
 ```
 Initialize and apply:
-terraform init
-terraform apply
+
+terraform init & terraform apply
 
 🎥 Learn with Hands-On Tutorials
 Each module is explained with full walkthroughs on YouTube:
@@ -45,14 +45,10 @@ Subscribe for real-world AWS + DevOps content with hands-on examples.
 
 🛠️ Premium repository includes:
 
-3-tier-infra-app
-
-ECS with ALB
-
-RDS with Secrets
-
+3-tier-infra-app,
+ECS with ALB,
+RDS with Secrets,
 S3 and DynamoDB Locking
-
 and more..
 
 📩 Request access (paid):
