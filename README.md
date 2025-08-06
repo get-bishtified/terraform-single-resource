@@ -58,7 +58,7 @@ and more..
 📩 Request access (paid):
 📧 support@bishtify.com
 
-🤝 Connect With Me
-📧 support@bishtify.com OR https://topmate.io/pradeep_singh_bisht
+🤝 Connect With Me - 📧 **Topmate**: [https://topmate.io/pradeep_singh_bisht](https://topmate.io/pradeep_singh_bisht)  
+  Book a 1:1 call for career guidance, project discussion, or personalized help!
 🔗 Get Bishtified with:
 Bishtify - Let’s build skills — not just resumes! 🚀
