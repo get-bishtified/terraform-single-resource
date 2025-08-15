@@ -1,21 +1,19 @@
 variable "aws_region" {
-  default = "us-east-1"
-}
-
-variable "instance_type" {
-  default = "t2.micro"
+  description = "AWS region to deploy Grafana"
+  default     = "ap-south-1"
 }
 
 variable "ami_id" {
   description = "Amazon Linux 2 AMI ID"
-  default     = "ami-0c02fb55956c7d316"
+  default     = "ami-0144277607031eca2" # Update if needed
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  default     = "t3.micro"
 }
 
 variable "allowed_cidr" {
-  description = "CIDR allowed to access Grafana and SSH"
+  description = "CIDR block allowed to access Grafana & SSH"
   default     = "0.0.0.0/0"
-}
-
-variable "key_name" {
-  description = "Name of the AWS key pair for SSH"
 }
