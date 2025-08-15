@@ -1,4 +1,4 @@
-# 🧱 Terraform AWS Modules – EC2 | S3 | VPC | EKS
+# 🧱 Terraform AWS Modules – EC2 | S3 | VPC | EKS | Grafana
 
 This repository contains production-ready **Terraform modules** for provisioning core AWS infrastructure components with reusable, modular code.
 
@@ -14,6 +14,7 @@ This repository contains production-ready **Terraform modules** for provisioning
 | `s3`   | Secure S3 bucket with versioning, encryption, access policies |
 | `ec2`  | Launch EC2 instances with key pairs, security groups, and user data |
 | `eks`  | Setup an EKS cluster with worker node groups and IAM roles |
+| `grafana`| Provision and configure a Grafana instance on AWS (via EC2 or managed service) integrated with CloudWatch & Prometheus |
 
 ---
 
