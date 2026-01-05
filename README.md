@@ -38,26 +38,18 @@ Initialize and apply:
 
 terraform init & terraform apply
 
-🎥 Learn with Hands-On Tutorials
-Each module is explained with full walkthroughs on YouTube:
+--
+## 🎥 Learn With YouTube Tutorials
 
-🔗 📺 Bishtify - Build Skills, Not Just Resumes
-Subscribe for real-world AWS + DevOps content with hands-on examples.
+Each project is **explained step-by-step** on YouTube with visuals and walkthroughs:
 
-🛠️ Premium repository includes:
+🔗 [📺 Bishtify - Build Skills, Not Just Resumes](https://www.youtube.com/@getbishtified) 
+🧠 Subscribe for weekly ML + CloudOps demos.
 
-3-tier-infra-app,
+---
 
-ECS with ALB,
-
-RDS with Secrets,
-
-S3 and DynamoDB Locking
-
-and more..
-
-📩 Request access (paid):
-📧 support@bishtify.com
+📩 **Contact:**  
+📧 `support@bishtify.com`
 
 🤝 Connect With Me - 📧 [Click here](https://topmate.io/pradeep_singh_bisht)
 🔗 Get Bishtified with:
